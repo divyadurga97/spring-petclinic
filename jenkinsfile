@@ -1,7 +1,7 @@
 node {
   
   stage('GIT CheckOut') {
-    git 'https://github.com/divyadurga97/spring-petclinic.git'
+    checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/divyadurga97/spring-petclinic.git']]]
   }
 
   stage('Maven-Clean') {
