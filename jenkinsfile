@@ -1,7 +1,7 @@
 node {
   
   stage('GIT CheckOut') {
-    git 'https://github.com/ruchi672/projectRepository.git'
+    git 'https://github.com/ruchi672/spring-petclinic.git'
   }
 
   stage('Maven-Clean') {
@@ -41,24 +41,13 @@ node {
                     def uploadSpec= """{
                         "files": [{
                         "pattern": "target/*.war",
-                        "target": "capstoneproject"}]
+                        "target": "spring-petclinic"}]
                     }"""
         server.upload(uploadSpec)
         
         }
         
         
-  stage('Download package from JFrog') {
-            def server= Artifactory.server 'artifactory'
-            def downloadSpec = """{
-            "files": [
-            {
-                "pattern": "capstoneproject/capstoneproject-0.0.1-SNAPSHOT.war",
-                "target": "./capstoneproject.war"
-            }
-            ]
-            }"""
-        server.download(downloadSpec)
-    }
+  
         
 }
