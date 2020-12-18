@@ -12,6 +12,6 @@ stage('Download package from JFrog') {
         server.download(downloadSpec)
     }
          stage('host') {
-    sh label: '', script: 'java -jar target -httpPort=8080'
+    sh label: '', script: 'java -jar ./spring-petclinic.jar -httpPort=8080'
   }
 }
