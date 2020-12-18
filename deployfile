@@ -4,8 +4,8 @@ stage('Download package from JFrog') {
             def downloadSpec = """{
             "files": [
             {
-                "pattern": "capstoneproject/capstoneproject-0.0.1-SNAPSHOT.war",
-                "target": "./capstone.war"
+                "pattern": "spring/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar",
+                "target": "./springpetclinc.jar"
             }
             ]
             }"""
@@ -13,6 +13,6 @@ stage('Download package from JFrog') {
     }
    
          stage('host') {
-    sh label: '', script: 'java -jar ./capstone.war -httpPort=8080'
+    sh label: '', script: 'java -jar ./springpetclinc.jar -httpPort=8080'
   }
 }
