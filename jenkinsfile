@@ -41,7 +41,7 @@ node {
                     def uploadSpec= """{
                         "files": [{
                         "pattern": "target/*.jar",
-                        "target": "spring-petclinic"}]
+                        "target": "spring"}]
                     }"""
         server.upload(uploadSpec)
         
