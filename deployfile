@@ -4,8 +4,8 @@ stage('Download package from JFrog') {
             def downloadSpec = """{
             "files": [
             {
-                "pattern": "capstoneproject/capstoneproject-0.0.1-SNAPSHOT.war",
-                "target": "./capstoneproject.war"
+                "pattern": "spring-petclinic/spring-petclinic-2.3.1.BUILD-SNAPSHOT.jar",
+                "target": "./spring-petclinic.jar"
             }
             ]
             }"""
