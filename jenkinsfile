@@ -45,9 +45,5 @@ node {
                     }"""
         server.upload(uploadSpec)
         
-        }
-        
-        
-  
-        
+        }      
 }
